@@ -1,4 +1,4 @@
-<img width="1341" height="1015" alt="image" src="https://github.com/user-attachments/assets/42307382-f6ab-4391-9708-1010bbc2c40f" /># Architectural Design Assistant
+# Architectural Design Assistant
 
 It is a full-stack, AI-powered creative tool designed to support architects and engineers during the early design phase. The system transforms textual briefs and rough sketches into refined architectural concepts, while also providing design narratives and basic compliance insights.
 The project focuses on practical system design, clean separation of concerns, and scalable AI integration, rather than attempting to over-engineer prematurely.
