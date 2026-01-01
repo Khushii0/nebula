@@ -1,0 +1,147 @@
+================================================================================
+  ARCHITECTURAL DESIGN ASSISTANT - HOW TO RUN
+================================================================================
+
+PREREQUISITES:
+  ✓ Python 3.8 or higher
+  ✓ Node.js 14+ and npm
+  ✓ Two terminal windows
+
+================================================================================
+STEP 1: START BACKEND SERVER
+================================================================================
+
+Open Terminal/Command Prompt #1:
+
+  cd backend
+  
+  # Create virtual environment (first time only)
+  python -m venv venv
+  
+  # Activate virtual environment
+  # Windows:
+  venv\Scripts\activate
+  # Linux/Mac:
+  source venv/bin/activate
+  
+  # Install dependencies (first time only)
+  pip install -r requirements.txt
+  
+  # Start server
+  uvicorn app.main:app --reload --port 8000
+
+✅ SUCCESS: You should see "Uvicorn running on http://127.0.0.1:8000"
+✅ Test: Open http://localhost:8000/health in browser (should show {"status":"healthy"})
+
+================================================================================
+STEP 2: START FRONTEND SERVER
+================================================================================
+
+Open Terminal/Command Prompt #2 (NEW WINDOW):
+
+  cd architectural-assistant
+  
+  # Install dependencies (first time only)
+  npm install
+  
+  # Start development server
+  npm start
+
+✅ SUCCESS: Browser should open to http://localhost:3000
+✅ If not, manually open http://localhost:3000
+
+================================================================================
+STEP 3: USE THE APPLICATION
+================================================================================
+
+1. REGISTER/LOGIN
+   - Click "Register" to create account
+   - Or "Login" if you have account
+   - Enter email and password
+
+2. CREATE PROJECT
+   - Click "+ New Project"
+   - Enter title (e.g., "My House Design")
+   - Click "Create"
+
+3. ENTER DESIGN BRIEF
+   - Type your requirements in the text area
+   - Example: "Modern 3-bedroom house with open kitchen"
+
+4. DRAW SKETCH (Optional)
+   - Use the canvas to draw
+   - Click "Save Sketch"
+
+5. GENERATE DESIGN
+   - Click "Generate Design" button
+   - Wait a few seconds
+   - View results: narrative, compliance notes, 3D preview
+
+================================================================================
+TROUBLESHOOTING
+================================================================================
+
+BACKEND WON'T START?
+  → Make sure virtual environment is activated
+  → Check: python --version (should be 3.8+)
+  → Reinstall: pip install -r requirements.txt
+
+FRONTEND WON'T START?
+  → Check: node --version (should be 14+)
+  → Delete node_modules folder and run: npm install
+
+PORT ALREADY IN USE?
+  → Backend: Change port 8000 to 8001 in uvicorn command
+  → Frontend: PORT=3001 npm start (Linux/Mac) or set PORT=3001 && npm start (Windows)
+
+CORS ERRORS?
+  → Make sure backend is running on port 8000
+  → Check browser console (F12) for specific error
+
+CAN'T CONNECT?
+  → Verify backend: http://localhost:8000/health
+  → Check both terminals are running
+  → Make sure no firewall blocking ports
+
+================================================================================
+QUICK TEST
+================================================================================
+
+1. Backend health check:
+   → Open: http://localhost:8000/health
+   → Should show: {"status":"healthy"}
+
+2. Backend API docs:
+   → Open: http://localhost:8000/docs
+   → Should show Swagger UI
+
+3. Frontend:
+   → Open: http://localhost:3000
+   → Should show login/register page
+
+================================================================================
+CONFIGURATION (Optional)
+================================================================================
+
+Backend uses SQLite by default (no setup needed).
+Database file: backend/architect.db (created automatically)
+
+To use PostgreSQL, create backend/.env:
+  DATABASE_URL=postgresql://user:pass@localhost/dbname
+
+To enable real AI (instead of mock):
+  OPENAI_API_KEY=your-key-here
+  LLM_MODE=openai
+
+================================================================================
+NEED MORE HELP?
+================================================================================
+
+See RUN.md for detailed documentation
+See START_HERE.md for quick reference
+See README.md for full project documentation
+
+================================================================================
+
+
+

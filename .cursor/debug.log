@@ -1,0 +1,2 @@
+{"location": "main.py:startup", "message": "CORS configuration", "data": {"origins": ["http://localhost:3000", "http://localhost:3001", "http://127.0.0.1:3000"]}, "timestamp": 1767268985594.2544, "sessionId": "debug-session", "runId": "startup", "hypothesisId": "CORS"}
+{"location": "main.py:startup", "message": "CORS configuration", "data": {"origins": ["http://localhost:3000", "http://localhost:3001", "http://127.0.0.1:3000"]}, "timestamp": 1767268995582.723, "sessionId": "debug-session", "runId": "startup", "hypothesisId": "CORS"}
